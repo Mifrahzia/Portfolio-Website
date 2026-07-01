@@ -1,0 +1,123 @@
+---
+import { siteConfig } from '../data/site';
+
+const navLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Education', href: '#education' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Certifications', href: '#certifications' },
+  { name: 'Contact', href: '#contact' },
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo / Name -->
+      <div class="flex-shrink-0">
+        <a href="#" class="text-xl font-bold tracking-tight text-white hover:text-teal-400 transition-colors">
+          {siteConfig.name}
+        </a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 lg:space-x-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-slate-300 hover:text-teal-400 transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <div class="flex md:hidden">
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          class="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg
+            class="block h-6 w-6"
+            id="icon-menu"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon (hidden by default) -->
+          <svg
+            class="hidden h-6 w-6"
+            id="icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Panel -->
+  <div class="hidden md:hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2 shadow-lg bg-slate-900 border-b border-slate-800">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors mobile-link"
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  // Vanilla JS for the mobile hamburger toggle per zero-JS mandate
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  if (mobileMenuToggle && mobileMenu && iconMenu && iconClose) {
+    const toggleMenu = () => {
+      const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+      mobileMenuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+      
+      mobileMenu.classList.toggle('hidden');
+      iconMenu.classList.toggle('hidden');
+      iconMenu.classList.toggle('block');
+      iconClose.classList.toggle('hidden');
+      iconClose.classList.toggle('block');
+    };
+
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+
+    // Close mobile menu automatically when a link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
+</script>

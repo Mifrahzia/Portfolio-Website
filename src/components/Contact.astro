@@ -1,0 +1,28 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<section id="contact" class="py-24 sm:py-32 bg-slate-900/50 border-t border-slate-900">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-5xl font-bold text-slate-100 mb-6">Let's Connect</h2>
+      <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+        I am currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, my inbox is always open!
+      </p>
+      
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href={`mailto:${siteConfig.email}`} class="flex items-center gap-3 px-8 py-4 bg-teal-600 hover:bg-teal-500 text-white rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:-translate-y-1 w-full sm:w-auto justify-center">
+          <!-- Email Icon -->
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          Say Hello
+        </a>
+        
+        <a href={`tel:${siteConfig.phone}`} class="flex items-center gap-3 px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-full font-medium transition-all duration-300 border border-slate-700 w-full sm:w-auto justify-center hover:-translate-y-1">
+          <!-- Phone Icon -->
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          Call Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

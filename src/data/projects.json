@@ -1,0 +1,34 @@
+[
+  {
+    "title": "AI-Powered Facial Recognition Attendance System",
+    "description": "Developed an AI-powered attendance system using SSD and ResNet-50 with ~95% accuracy. Implemented real-time processing with Flask-SocketIO and PostgreSQL for robust data management.",
+    "tech": ["Python", "Flask", "Socket.IO", "PostgreSQL", "SSD", "ResNet-50"],
+    "status": "Completed",
+    "githubUrl": "TODO: Add repo link",
+    "liveUrl": "TODO: Add live link"
+  },
+  {
+    "title": "C.L.A.R.A. — AI-Powered Articulation Therapy Assistant",
+    "description": "Ongoing final-year project developing an articulation therapy assistant. Built with Wav2Vec2, ONNX, and transfer learning. Features a FastAPI backend serving Whisper, Wav2Vec2, an LLM, vector DB, and WebSocket-based emotion detection.",
+    "tech": ["FastAPI", "Wav2Vec2", "Whisper", "ONNX", "LLM", "OpenCV", "WebSocket"],
+    "status": "In Progress",
+    "githubUrl": "TODO: Add repo link",
+    "liveUrl": "TODO: Add live link"
+  },
+  {
+    "title": "Gladius Knives E-commerce Platform",
+    "description": "Built a full-stack e-commerce platform with MERN and TypeScript. Features JWT authentication, Cloudinary integration, SSR for 40% faster load times, and an admin dashboard.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "TypeScript", "JWT", "Cloudinary"],
+    "status": "Completed",
+    "githubUrl": "TODO: Add repo link",
+    "liveUrl": "TODO: Add live link"
+  },
+  {
+    "title": "Spring PetClinic – DevOps Pipeline Implementation",
+    "description": "Implemented a 6-stage DevOps pipeline using GitHub Actions. Provisioned AWS infrastructure using Terraform and deployed the application using Docker and Kubernetes.",
+    "tech": ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions"],
+    "status": "Completed",
+    "githubUrl": "TODO: Add repo link",
+    "liveUrl": "TODO: Add live link"
+  }
+]
