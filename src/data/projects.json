@@ -1,26 +1,26 @@
 [
   {
     "title": "AI-Powered Facial Recognition Attendance System",
-    "description": "Developed an AI-powered attendance system using SSD and ResNet-50 with ~95% accuracy. Implemented real-time processing with Flask-SocketIO and PostgreSQL for robust data management.",
+    "description": "Developed an AI-powered attendance system using SSD and ResNet-50. Implemented real-time processing with Flask-SocketIO and PostgreSQL for robust data management.",
     "tech": ["Python", "Flask", "Socket.IO", "PostgreSQL", "SSD", "ResNet-50"],
     "status": "Completed",
-    "githubUrl": "TODO: Add repo link",
+    "githubUrl": "https://github.com/Mifrahzia/Facial-Recognition-Attendance",
     "liveUrl": "TODO: Add live link"
   },
   {
     "title": "C.L.A.R.A. — AI-Powered Articulation Therapy Assistant",
-    "description": "Ongoing final-year project developing an articulation therapy assistant. Built with Wav2Vec2, ONNX, and transfer learning. Features a FastAPI backend serving Whisper, Wav2Vec2, an LLM, vector DB, and WebSocket-based emotion detection.",
-    "tech": ["FastAPI", "Wav2Vec2", "Whisper", "ONNX", "LLM", "OpenCV", "WebSocket"],
-    "status": "In Progress",
-    "githubUrl": "TODO: Add repo link",
+    "description": "An articulation therapy assistant built with Wav2Vec2, ONNX, and transfer learning. Features a production FastAPI service serving Whisper, Wav2Vec2, an LLM, a vector DB, Mediapipe BlazeFace and Vision Transformer models, and WebSocket-based emotion detection.",
+    "tech": ["FastAPI", "Wav2Vec2", "Whisper", "ONNX", "LLM", "Mediapipe BlazeFace", "Vision Transformer", "WebSocket"],
+    "status": "Completed",
+    "githubUrl": "https://github.com/abdullahahmadarslan/C.L.A.R.A",
     "liveUrl": "TODO: Add live link"
   },
   {
     "title": "Gladius Knives E-commerce Platform",
-    "description": "Built a full-stack e-commerce platform with MERN and TypeScript. Features JWT authentication, Cloudinary integration, SSR for 40% faster load times, and an admin dashboard.",
-    "tech": ["React", "Node.js", "Express", "MongoDB", "TypeScript", "JWT", "Cloudinary"],
+    "description": "Built a full-stack e-commerce platform with JWT authentication, Cloudinary integration, inventory management, and SEO optimization, plus an admin dashboard.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "JWT", "Cloudinary"],
     "status": "Completed",
-    "githubUrl": "TODO: Add repo link",
+    "githubUrl": "https://github.com/Mifrahzia/gladius-mern",
     "liveUrl": "TODO: Add live link"
   },
   {
@@ -28,7 +28,7 @@
     "description": "Implemented a 6-stage DevOps pipeline using GitHub Actions. Provisioned AWS infrastructure using Terraform and deployed the application using Docker and Kubernetes.",
     "tech": ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions"],
     "status": "Completed",
-    "githubUrl": "TODO: Add repo link",
+    "githubUrl": "https://github.com/Mifrahzia/devops-labmid",
     "liveUrl": "TODO: Add live link"
   }
 ]
