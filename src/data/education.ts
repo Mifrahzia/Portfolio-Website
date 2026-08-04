@@ -3,7 +3,7 @@ export const education = [
     institution: "COMSATS University Islamabad",
     degree: "BS Computer Science",
     period: "2022 - 2026",
-    details: "CGPA 3.50"
+    details: "CGPA 3.52"
   },
   {
     institution: "Kinnaird College for Women University",

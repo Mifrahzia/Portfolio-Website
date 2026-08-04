@@ -1,14 +1,18 @@
 export const skills = [
   {
-    category: "Languages",
-    items: ["Python", "SQL", "Java", "CSS", "HTML", "JavaScript", "TypeScript", "C", "C++", "Assembly", "Linux"]
+    category: "Languages & Frameworks",
+    items: ["Python", "TensorFlow", "scikit-learn", "NumPy", "Flask", "FastAPI", "Socket.IO", "JWT"]
   },
   {
-    category: "Frameworks & Libraries",
-    items: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "TensorFlow", "scikit-learn", "NumPy", "Flask", "Socket.IO"]
+    category: "Cloud & DevOps",
+    items: ["AWS", "Docker", "Kubernetes", "Terraform", "GitHub Actions CI/CD"]
   },
   {
-    category: "Tools & Platforms",
-    items: ["Cloudinary", "Stripe", "JWT", "Git", "Postman", "Docker", "Kubernetes", "AWS"]
+    category: "AI/ML",
+    items: ["Transfer learning", "ONNX optimization", "Whisper & Wav2Vec2", "LLM-based feedback generation", "CNN"]
+  },
+  {
+    category: "Data & Tools",
+    items: ["MongoDB", "PostgreSQL", "Cloudinary", "Git"]
   }
 ];

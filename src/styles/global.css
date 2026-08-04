@@ -2,6 +2,43 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand accents: emerald green + maroon + light brown */
+  --color-brown-50: #fbf4ea;
+  --color-brown-100: #f3e3c9;
+  --color-brown-200: #e3c9a8;
+  --color-brown-300: #d1ab7d;
+  --color-brown-400: #bd8b57;
+  --color-brown-500: #a06f3f;
+  --color-brown-600: #82572f;
+  --color-brown-700: #654327;
+  --color-brown-900: #3d2917;
+
+  --color-maroon-50: #fbeef0;
+  --color-maroon-100: #f3d3d8;
+  --color-maroon-200: #dba7b0;
+  --color-maroon-300: #c67783;
+  --color-maroon-400: #b0475a;
+  --color-maroon-500: #8f2f3f;
+  --color-maroon-600: #7a1f2b;
+  --color-maroon-700: #5c1a24;
+  --color-maroon-900: #38101a;
+
+  --color-emerald-50: #eaf6f0;
+  --color-emerald-100: #cdead9;
+  --color-emerald-200: #a7dbc4;
+  --color-emerald-300: #72c19f;
+  --color-emerald-400: #3ea378;
+  --color-emerald-500: #21855f;
+  --color-emerald-600: #1a6b4c;
+  --color-emerald-700: #17543d;
+  --color-emerald-900: #0f3226;
+
+  /* Neutral surfaces with a warm undertone that reads as a blend of brown + emerald, tuned light */
+  --color-surface-50: #fbf9f5;
+  --color-surface-100: #f3ede2;
+  --color-surface-200: #e7ddc9;
+  --color-surface-300: #d6c8ab;
 }
 
 /* Base resets & utilities */
@@ -10,5 +47,5 @@ html {
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply text-neutral-900 antialiased bg-fixed bg-gradient-to-br from-emerald-50 via-maroon-50 to-brown-50;
 }
