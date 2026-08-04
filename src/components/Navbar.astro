@@ -3,21 +3,21 @@ import { siteConfig } from '../data/site';
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Education', href: '#education' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Education', href: '#education' },
   { name: 'Certifications', href: '#certifications' },
   { name: 'Contact', href: '#contact' },
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+<header class="sticky top-0 z-50 w-full border-b border-surface-200 bg-surface-50/80 backdrop-blur-md">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <!-- Logo / Name -->
       <div class="flex-shrink-0">
-        <a href="#" class="text-xl font-bold tracking-tight text-white hover:text-teal-400 transition-colors">
+        <a href="#" class="text-xl font-bold tracking-tight text-neutral-900 hover:text-emerald-600 transition-colors">
           {siteConfig.name}
         </a>
       </div>
@@ -27,7 +27,7 @@ const navLinks = [
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class="text-sm font-medium text-slate-300 hover:text-teal-400 transition-colors"
+            class="text-sm font-medium text-neutral-600 hover:text-maroon-600 transition-colors"
           >
             {link.name}
           </a>
@@ -39,7 +39,7 @@ const navLinks = [
         <button
           type="button"
           id="mobile-menu-toggle"
-          class="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
+          class="inline-flex items-center justify-center rounded-md p-2 text-neutral-500 hover:bg-surface-100 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500"
           aria-controls="mobile-menu"
           aria-expanded="false"
           aria-label="Toggle navigation menu"
@@ -76,11 +76,11 @@ const navLinks = [
 
   <!-- Mobile Nav Panel -->
   <div class="hidden md:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2 shadow-lg bg-slate-900 border-b border-slate-800">
+    <div class="space-y-1 px-2 pb-3 pt-2 shadow-lg bg-surface-50 border-b border-surface-200">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-colors mobile-link"
+          class="block rounded-md px-3 py-2 text-base font-medium text-neutral-600 hover:bg-surface-100 hover:text-neutral-900 transition-colors mobile-link"
         >
           {link.name}
         </a>

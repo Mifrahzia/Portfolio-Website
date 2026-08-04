@@ -6,5 +6,9 @@ export const certifications = [
   {
     name: "Machine Learning Specialization",
     issuer: "Stanford University (Coursera)"
+  },
+  {
+    name: "Anthropic Academy — AI Fluency: Framework & Foundations; Introduction to Model Context Protocol",
+    issuer: "Anthropic Academy"
   }
 ];
