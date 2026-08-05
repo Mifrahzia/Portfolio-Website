@@ -60,7 +60,7 @@ src/
 
 ## Project Scope
 - **Phase 1 Target**: Localhost environment running via `npm run dev`. Fully static output with no server-side features, databases, or form submissions.
-- **Phase 2 (Out of Scope for now)**: EC2 deployment, CI/CD pipeline, domain setup, and contact form backends. This document will be updated when Phase 2 begins.
+- **Phase 2 (Out of Scope for now)**: EC2 deployment, CI/CD pipeline, domain setup, and contact form backends. This document will be updated when Phase 2 begins. (done)
 
 ---
 *Note: This file serves as the source of truth for code style and scoping. It must be kept in sync as the project evolves.*
