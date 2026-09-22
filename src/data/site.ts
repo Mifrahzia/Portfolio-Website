@@ -3,7 +3,6 @@ export const siteConfig = {
   title: "AI & Full-Stack Developer",
   tagline: "Computer Science graduate with a strong foundation in Machine Learning and Deep Learning, building end-to-end AI-driven applications.",
   email: "mifrahtmz@gmail.com",
-  phone: "+923318071888",
   linkedinUrl: "https://www.linkedin.com/in/mifrah-zia/",
-  githubUrl: "https://github.com/mifrahzia-cinnova"
+  githubUrl: "https://github.com/Mifrahzia"
 };
