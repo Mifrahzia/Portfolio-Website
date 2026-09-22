@@ -1,18 +1,22 @@
 export const skills = [
   {
-    category: "Languages & Frameworks",
-    items: ["Python", "TensorFlow", "scikit-learn", "NumPy", "Flask", "FastAPI", "Socket.IO", "JWT"]
+    title: "Machine Learning & Deep Learning",
+    detail: "TensorFlow, transfer learning, model fine-tuning, ONNX optimization",
+    tone: "primary"
   },
   {
-    category: "Cloud & DevOps",
-    items: ["AWS", "Docker", "Kubernetes", "Terraform", "GitHub Actions CI/CD"]
+    title: "Computer Vision",
+    detail: "SSD, ResNet-50, BlazeFace, Vision Transformer, real-time detection",
+    tone: "accent"
   },
   {
-    category: "AI/ML",
-    items: ["Transfer learning", "ONNX optimization", "Whisper & Wav2Vec2", "LLM-based feedback generation", "CNN"]
+    title: "Backend & API Engineering",
+    detail: "FastAPI, Flask, Socket.IO, PostgreSQL, MongoDB",
+    tone: "text"
   },
   {
-    category: "Data & Tools",
-    items: ["MongoDB", "PostgreSQL", "Cloudinary", "Git"]
+    title: "Cloud & DevOps",
+    detail: "Docker, Kubernetes, Terraform, AWS, GitHub Actions CI/CD",
+    tone: "secondary"
   }
 ];

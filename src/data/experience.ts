@@ -2,11 +2,11 @@ export const experience = [
   {
     role: "Software Engineer Intern",
     company: "Cinnova Technologies",
-    dates: "Jun 2026 – Present",
+    dates: "Jul 2026 – Aug 2026",
     bullets: [
-      "Diagnosed and resolved live production issues and bug tickets across a full-stack platform, improving service reliability, order tracking, and operational workflow management.",
-      "Gained hands-on exposure to cloud infrastructure and deployment practices, including AWS S3, and Dockerized CI/CD workflows, supporting consistent and observable service delivery.",
-      "Completed structured training in DevOps, Machine Learning, and Software Engineering fundamentals to strengthen cross-functional collaboration and engineering best practices."
+      "Diagnosed and resolved bugs across a full-stack platform, improving order tracking and workflow management.",
+      "Completed structured training in DevOps, Machine Learning, and Software Engineering fundamentals to build a well-rounded engineering foundation.",
+      "Gained hands-on exposure to AWS, and Dockerized CI/CD workflows."
     ]
   },
   {

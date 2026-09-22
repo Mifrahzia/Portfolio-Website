@@ -1,34 +1,38 @@
 [
   {
-    "title": "AI-Powered Facial Recognition Attendance System",
-    "description": "Developed an AI-powered attendance system using SSD and ResNet-50. Implemented real-time processing with Flask-SocketIO and PostgreSQL for robust data management.",
-    "tech": ["Python", "Flask", "Socket.IO", "PostgreSQL", "SSD", "ResNet-50"],
-    "status": "Completed",
-    "githubUrl": "https://github.com/Mifrahzia/Facial-Recognition-Attendance",
-    "liveUrl": "TODO: Add live link"
-  },
-  {
     "title": "C.L.A.R.A. — AI-Powered Articulation Therapy Assistant",
-    "description": "An articulation therapy assistant built with Wav2Vec2, ONNX, and transfer learning. Features a production FastAPI service serving Whisper, Wav2Vec2, an LLM, a vector DB, Mediapipe BlazeFace and Vision Transformer models, and WebSocket-based emotion detection.",
-    "tech": ["FastAPI", "Wav2Vec2", "Whisper", "ONNX", "LLM", "Mediapipe BlazeFace", "Vision Transformer", "WebSocket"],
-    "status": "Completed",
-    "githubUrl": "https://github.com/abdullahahmadarslan/C.L.A.R.A",
-    "liveUrl": "TODO: Add live link"
+    "images": [
+      "/images/projects/clara-conversation-practice.jpg",
+      "/images/projects/clara-story-gap-game.jpg",
+      "/images/projects/clara-dashboard.jpg"
+    ],
+    "bullets": [
+      "Curated a 2,000+ sample audio dataset and fine-tuned a Wav2Vec2 deep learning model using transfer learning, applying ONNX optimization to improve inference performance for real-time phoneme detection.",
+      "Built and evaluated a production FastAPI service integrating Whisper, Wav2Vec2, and an LLM to generate intelligent, personalized feedback, combining model development with real-world application design.",
+      "Collaborated across model development, backend engineering, and real-time facial emotion detection using BlazeFace and Vision Transformer to deliver an end-to-end AI solution."
+    ],
+    "tech": ["Wav2Vec2", "ONNX", "FastAPI", "Whisper", "LLM", "BlazeFace", "Vision Transformer"],
+    "status": "Completed"
   },
   {
-    "title": "Gladius Knives E-commerce Platform",
-    "description": "Built a full-stack e-commerce platform with JWT authentication, Cloudinary integration, inventory management, and SEO optimization, plus an admin dashboard.",
-    "tech": ["React", "Node.js", "Express", "MongoDB", "JWT", "Cloudinary"],
-    "status": "Completed",
-    "githubUrl": "https://github.com/Mifrahzia/gladius-mern",
-    "liveUrl": "TODO: Add live link"
+    "title": "AI-Powered Facial Recognition Attendance System",
+    "images": [
+      "/images/projects/facial-recognition-attendance.jpg",
+      "/images/projects/facial-recognition-students.jpg"
+    ],
+    "bullets": [
+      "Trained and evaluated face detection and recognition models (SSD, ResNet-50) on custom data, then deployed the trained models as a real-time service using Flask-SocketIO and PostgreSQL."
+    ],
+    "tech": ["Python", "SSD", "ResNet-50", "Flask-SocketIO", "PostgreSQL"],
+    "status": "Completed"
   },
   {
-    "title": "Spring PetClinic – DevOps Pipeline Implementation",
-    "description": "Implemented a 6-stage DevOps pipeline using GitHub Actions. Provisioned AWS infrastructure using Terraform and deployed the application using Docker and Kubernetes.",
+    "title": "Spring PetClinic — DevOps Pipeline Implementation",
+    "images": ["/images/projects/spring-petclinic.jpg"],
+    "bullets": [
+      "Built a 6-stage GitHub Actions CI/CD pipeline with automated testing and deployment, and containerized infrastructure with Docker, Kubernetes, and Terraform-provisioned AWS."
+    ],
     "tech": ["Docker", "Kubernetes", "Terraform", "AWS", "GitHub Actions"],
-    "status": "Completed",
-    "githubUrl": "https://github.com/Mifrahzia/devops-labmid",
-    "liveUrl": "TODO: Add live link"
+    "status": "Completed"
   }
 ]

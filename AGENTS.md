@@ -1,9 +1,9 @@
 # Project Rules and Guidelines (AGENTS.md)
 
 ## Tech Stack
-- **Framework**: Astro (Static Output mode)
+- **Framework**: Astro (Static Output mode) with the `@astrojs/react` integration for one interactive island (see Zero-JS Mandate below).
 - **Styling**: Tailwind CSS
-- **Language**: Astro components (`.astro` files) using vanilla HTML/CSS/JS. TypeScript (`.ts`) is used exclusively for structured data files in `src/data/`.
+- **Language**: Astro components (`.astro` files) using vanilla HTML/CSS/JS. TypeScript (`.ts`) is used exclusively for structured data files in `src/data/`. React (`.tsx`) is used exclusively for `src/components/react/` islands.
 - **Package Manager**: npm
 - **Node.js**: Expected environment is standard LTS.
 
@@ -19,21 +19,19 @@ src/
   components/              # Reusable Astro components (one per portfolio section)
     Navbar.astro
     Hero.astro
-    About.astro
-    Skills.astro
     Projects.astro
-    ProjectCard.astro
     Education.astro
     Experience.astro
     Certifications.astro
     Contact.astro
     Footer.astro
+    react/                  # React islands (only where a static/CSS-only approach can't deliver the interaction)
+      ExpandableProjects.tsx
   data/                    # Project content data (kept separate from markup)
-    site.ts                # Site metadata (name, title, contact info, TODO social URLs)
-    projects.json          # Projects array (title, description, tech[], links, status)
-    skills.ts              # Categorized technical skills
+    site.ts                # Site metadata (name, title, contact info, social URLs)
+    projects.json          # Projects array (title, description, tech[], status)
     education.ts           # Education history details
-    experience.ts          # Professional and extracurricular experiences
+    experience.ts          # Professional experience (role, company, dates)
     certifications.ts      # Certifications listing
   pages/
     index.astro            # Single-page index file importing all sections
@@ -56,7 +54,7 @@ src/
 
 ## Performance & Icons Policy
 - **No Third-Party Icon Packages**: Do not import or install external icon packages (e.g., FontAwesome, React Icons). All icons (GitHub, LinkedIn, contact mail, external links) must be written as clean, responsive, inline `<svg>` elements inside the components.
-- **Zero-JS Mandate**: Keep Astro's high-performance zero-JS delivery intact. Minimal client-side JS is allowed only for the mobile navigation toggle (inside a scoped `<script>` element in `Navbar.astro`).
+- **Zero-JS Mandate**: Keep Astro's high-performance zero-JS delivery intact by default. Minimal client-side JS is allowed for the mobile navigation toggle (inside a scoped `<script>` element in `Navbar.astro`), plus exactly one hydrated React island — `src/components/react/ExpandableProjects.tsx` (`client:load`, using `motion/react`) — for the shared-layout expand animation on project cards, since that interaction isn't achievable with CSS alone. Do not add further React islands or animation libraries without a similarly specific interaction need; prefer CSS/Astro for everything else.
 
 ## Project Scope
 - **Phase 1 Target**: Localhost environment running via `npm run dev`. Fully static output with no server-side features, databases, or form submissions.

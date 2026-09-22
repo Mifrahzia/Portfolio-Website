@@ -1,25 +1,38 @@
 ---
 import { skills } from '../data/skills';
+
+const icons: Record<string, string> = {
+  primary: 'M9.5 2A2.5 2.5 0 007 4.5v.09A3 3 0 004.09 7.5H4a2 2 0 000 4h.09a3 3 0 001.41 2.54v.87A2.5 2.5 0 008 17.41V19a2 2 0 104 0v-1.5a2.5 2.5 0 002.5-2.5v-.09A3 3 0 0016.91 12H17a2 2 0 000-4h-.09a3 3 0 00-1.41-2.41V4.5A2.5 2.5 0 0013 2h-3.5z',
+  accent: 'M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
+  text: 'M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z M4 16a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z M8 6h.01 M8 16h.01',
+  secondary: 'M6.5 18a4.5 4.5 0 01-.58-8.96A6 6 0 1117.5 8h.5a4 4 0 010 8H6.5z'
+};
+
+const toneClasses: Record<string, { box: string; icon: string }> = {
+  primary: { box: 'bg-primary-200 text-primary-900', icon: 'bg-background-50/80 text-primary-700' },
+  accent: { box: 'bg-accent-200 text-accent-900', icon: 'bg-background-50/80 text-accent-700' },
+  text: { box: 'bg-text-200 text-text-900', icon: 'bg-background-50/80 text-text-700' },
+  secondary: { box: 'bg-secondary-200 text-secondary-900', icon: 'bg-background-50/80 text-secondary-700' }
+};
 ---
 
-<section id="skills" class="py-24 sm:py-32">
+<section id="skills" class="py-14 sm:py-20">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-12 flex items-center gap-4">
-        <span class="w-8 h-1 rounded-full bg-gradient-to-r from-emerald-500 via-maroon-500 to-brown-500"></span>
-        Technical Skills
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text-500 mb-8 flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-sm bg-accent-500 flex-shrink-0"></span>
+        Skills
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {skills.map((skillGroup) => (
-          <div class="bg-white border border-surface-200 rounded-2xl p-6 hover:border-emerald-400 hover:shadow-md transition-all duration-300">
-            <h3 class="text-xl font-semibold text-neutral-800 mb-6">{skillGroup.category}</h3>
-            <div class="flex flex-wrap gap-3">
-              {skillGroup.items.map((item) => (
-                <span class="px-3 py-1.5 bg-emerald-50 text-emerald-700 text-sm font-medium rounded-lg hover:bg-emerald-100 hover:text-emerald-800 transition-all cursor-default border border-emerald-200">
-                  {item}
-                </span>
-              ))}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {skills.map((skill) => (
+          <div class={`rounded-xl px-5 py-4 flex items-center gap-4 ${toneClasses[skill.tone].box}`}>
+            <span class={`shrink-0 w-11 h-11 rounded-full flex items-center justify-center ${toneClasses[skill.tone].icon}`} aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[skill.tone]}></path></svg>
+            </span>
+            <div class="min-w-0">
+              <h3 class="text-base font-bold leading-snug">{skill.title}</h3>
+              <p class="text-sm opacity-75 leading-snug font-normal">{skill.detail}</p>
             </div>
           </div>
         ))}

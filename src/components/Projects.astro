@@ -1,21 +1,17 @@
 ---
 import projects from '../data/projects.json';
-import ProjectCard from './ProjectCard.astro';
+import ExpandableProjects from './react/ExpandableProjects';
 ---
 
-<section id="projects" class="py-24 sm:py-32 bg-surface-100/60">
+<section id="projects" class="py-14 sm:py-20">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-12 flex items-center gap-4">
-        <span class="w-8 h-1 rounded-full bg-gradient-to-r from-emerald-500 via-maroon-500 to-brown-500"></span>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-text-500 mb-8 flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-sm bg-accent-500 flex-shrink-0"></span>
         Featured Projects
       </h2>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <ProjectCard project={project} />
-        ))}
-      </div>
+
+      <ExpandableProjects client:load projects={projects} />
     </div>
   </div>
 </section>
