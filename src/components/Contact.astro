@@ -1,5 +1,4 @@
 ---
-import { siteConfig } from '../data/site';
 ---
 
 <section id="contact" class="py-14 sm:py-20">
@@ -10,12 +9,17 @@ import { siteConfig } from '../data/site';
         I am currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, my inbox is always open!
       </p>
 
-      <p class="font-bold text-text-500 mb-8">{siteConfig.email}</p>
+      <form id="contact-form" action="https://formsubmit.co/ajax/$b810c5089740669ba0dd8ec8c8541454" method="POST" class="content-card text-left grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <!-- Honeypot: catches naive bots that fill every input field -->
+        <input type="text" name="_honey" style="display:none" />
 
-      <form id="contact-form" class="content-card text-left grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <!-- Subject Line: helps you filter or set rules in your email inbox -->
+        <input type="hidden" name="_subject" value="Portfolio Inquiry" />
+        <input type="hidden" name="_template" value="table" />
+
         <div class="flex flex-col gap-1.5">
-          <label for="contact-name" class="text-sm font-bold text-text-500">Name</label>
-          <input id="contact-name" name="name" type="text" placeholder="Your name"
+          <label for="contact-name" class="text-sm font-bold text-text-500">Name <span class="font-normal text-text-500/50">(required)</span></label>
+          <input id="contact-name" name="name" type="text" required placeholder="Your name"
             class="rounded-lg border border-primary-200 bg-background-100 px-4 py-2.5 text-text-500 placeholder:text-text-500/40 focus:outline-none focus:border-accent-400 transition-colors" />
         </div>
 
@@ -38,35 +42,56 @@ import { siteConfig } from '../data/site';
         </div>
 
         <button type="submit"
-          class="sm:col-span-2 flex items-center justify-center gap-2 mt-1 px-8 py-3.5 bg-primary-500 hover:bg-accent-500 text-background-100 rounded-full font-bold transition-colors duration-300 active:animate-press">
-          Send Message
+          class="sm:col-span-2 flex items-center justify-center gap-2 mt-1 px-8 py-3.5 bg-primary-500 hover:bg-accent-500 text-background-100 rounded-full font-bold transition-colors duration-300 active:animate-press disabled:opacity-60 disabled:cursor-not-allowed">
+          <span id="contact-submit-label">Send Message</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </button>
+
+        <p id="contact-status" class="sm:col-span-2 text-sm text-center min-h-[1.25rem]" role="status"></p>
       </form>
     </div>
   </div>
 </section>
 
-<script define:vars={{ contactEmail: siteConfig.email }}>
+<script>
   const form = document.getElementById('contact-form');
-  form?.addEventListener('submit', (e) => {
+  const status = document.getElementById('contact-status');
+  const submitLabel = document.getElementById('contact-submit-label');
+  const submitButton = form?.querySelector('button[type="submit"]');
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name');
-    const email = data.get('email');
-    const phone = data.get('phone');
-    const message = data.get('message');
+    if (!(form instanceof HTMLFormElement)) return;
 
-    const subject = name ? `Portfolio inquiry from ${name}` : 'Portfolio inquiry';
-    const bodyLines = [
-      name ? `Name: ${name}` : null,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      '',
-      message,
-    ].filter((line) => line !== null);
+    submitButton?.setAttribute('disabled', 'true');
+    if (submitLabel) submitLabel.textContent = 'Sending...';
+    if (status) {
+      status.textContent = '';
+      status.classList.remove('text-red-600', 'text-accent-500');
+    }
 
-    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-    window.location.href = mailto;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      form.reset();
+      if (status) {
+        status.textContent = "Message sent! I'll get back to you soon.";
+        status.classList.add('text-accent-500');
+      }
+    } catch {
+      if (status) {
+        status.textContent = 'Something went wrong. Please try again or email me directly.';
+        status.classList.add('text-red-600');
+      }
+    } finally {
+      submitButton?.removeAttribute('disabled');
+      if (submitLabel) submitLabel.textContent = 'Send Message';
+    }
   });
 </script>
