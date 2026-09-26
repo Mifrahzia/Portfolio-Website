@@ -1,0 +1,7 @@
+10015	IGNORE	(Cache-Control on static assets is desired for a public static site with no sensitive data)
+90004	IGNORE	(Cross-Origin-Embedder-Policy not needed: no SharedArrayBuffer/cross-origin-isolation use case; would risk breaking Google Fonts loading)
+10049	IGNORE	(Storable/cacheable content is intentional for a static portfolio site)
+10050	IGNORE	(Content served from cache is expected/desired behavior)
+10109	IGNORE	(Informational detection only, not a vulnerability)
+10202	IGNORE	(Contact form posts to third-party formsubmit.co with no session/auth state on this site to protect via CSRF token)
+90003	IGNORE	(Google Fonts stylesheet is dynamically generated per user-agent and cannot carry a static SRI hash)
