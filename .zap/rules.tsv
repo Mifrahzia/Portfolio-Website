@@ -5,3 +5,4 @@
 10109	IGNORE	(Informational detection only, not a vulnerability)
 10202	IGNORE	(Contact form posts to third-party formsubmit.co with no session/auth state on this site to protect via CSRF token)
 90003	IGNORE	(Google Fonts stylesheet is dynamically generated per user-agent and cannot carry a static SRI hash)
+10055	IGNORE	(Astro's hydration bootstrap requires inline <script>; customHttp.yml is static per Amplify docs so hash/nonce-based CSP would require committing new hashes on every build, risking deploy loops - accepted tradeoff for a static site with no user data)
